@@ -8,6 +8,12 @@
   align-items: center;
 }
 
+.press-enter-text {
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
 .blinking {
   animation: blink 1s step-start infinite;
   font-size: 1rem;

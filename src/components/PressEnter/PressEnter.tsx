@@ -1,17 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/PressEnter.css"; 
+import "../../styles/PressEnter.css";
 
 const PressEnter = () => {
   const navigate = useNavigate();
+  const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Enter") {
-      const audio = new Audio("/sounds/coin.mp3");
-      audio.volume = 0.1;
-      audio.play().catch(() => {});
-        navigate("/home");
+        setClicked(true);
+        const audio = new Audio("/sounds/coin.mp3");
+        audio.volume = 0.1;
+        audio.play().catch(() => { });
+        setTimeout(() => {
+          navigate("/home");
+        }, 600);
       }
     };
 
@@ -21,11 +25,14 @@ const PressEnter = () => {
 
   return (
     <div className="press-enter-container">
-      <div className="blinking" onClick={() => {
-      const audio = new Audio("/sounds/coin.mp3");
-      audio.volume = 0.1;
-      audio.play().catch(() => {});
-      navigate("/home");
+      <div className={clicked ? "press-enter-text" : "blinking"} onClick={() => {
+        setClicked(true);
+        const audio = new Audio("/sounds/coin.mp3");
+        audio.volume = 0.1;
+        audio.play().catch(() => { });
+        setTimeout(() => {
+          navigate("/home");
+        }, 600);
       }}>
         Press ENTER to continue
       </div>
