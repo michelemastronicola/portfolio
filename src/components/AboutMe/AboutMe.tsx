@@ -63,7 +63,15 @@ const AboutMe = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <Button color="dark" className="p-0 border-0 bg-transparent" onClick={() => { navigate("/home") }}>
+                <Button color="dark" className="p-0 border-0 bg-transparent"
+                  onClick={() => {
+                    const audio = new Audio("/sounds/back.mp3");
+                    audio.volume = 0.3;
+                    audio.play().catch(() => { });
+                    setTimeout(() => {
+                      navigate("/home");
+                    }, 600)
+                  }}>
                   <img
                     src={"/images/leftarrow.gif"}
                     alt={"backgif"}

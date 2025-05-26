@@ -50,54 +50,62 @@ __          ________ _      _____ ____  __  __ ______
             onComplete={() => setShowButtons(true)}
           />
         </div>
-      {showButtons && (
-        <div className="button-wrapper">
-          <Row className="text-center w-100 m-0 justify-content-center">
-            {["about me", "work history", "contacts", "about this project"].map((label, index) => (
-              <MotionCol
-                key={index}
-                xs="6"
-                md="3"
-                className="d-flex flex-column align-items-center p-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.3, duration: 2 }}
-              >
-                <Button color="dark" className="p-0 border-0 bg-transparent" 
-                onClick={() => {
-                  if (index === 0) {
-                    navigate("/aboutMe");
-                  } else if (index === 2) {
-                    navigate("/contacts");
-                  }
-                }}
+        {showButtons && (
+          <div className="button-wrapper">
+            <Row className="text-center w-100 m-0 justify-content-center">
+              {["about me", "work history", "contacts", "about this project"].map((label, index) => (
+                <MotionCol
+                  key={index}
+                  xs="6"
+                  md="3"
+                  className="d-flex flex-column align-items-center p-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.3, duration: 2 }}
                 >
-                  <img
-                    src={`/images/gif${index + 1}.gif`}
-                    alt={`gif-${label}`}
-                    style={{
-                      width: "100%",
-                      maxWidth: "120px",
-                      height: "120px",
-                      objectFit: "contain",
+                  <Button color="dark" className="p-0 border-0 bg-transparent"
+                    onClick={() => {
+                      const audio = new Audio("/sounds/forward.wav");
+                      audio.volume = 0.3;
+                      audio.play().catch(() => { });
+                      if (index === 0) {
+                        setTimeout(() => {
+                          navigate("/aboutMe");
+                        }, 600)
+                      }
+                      else if (index === 2) {
+                        setTimeout(() => {
+                          navigate("/contacts");
+                        }, 600)
+                      }
                     }}
-                  />
-                </Button>
-                <div
-                  style={{
-                    color: "white",
-                    marginTop: "0.5rem",
-                    fontFamily: "monospace",
-                  }}
-                >
-                  {label}
-                </div>
-              </MotionCol>
-            ))}
+                  >
+                    <img
+                      src={`/images/gif${index + 1}.gif`}
+                      alt={`gif-${label}`}
+                      style={{
+                        width: "100%",
+                        maxWidth: "120px",
+                        height: "120px",
+                        objectFit: "contain",
+                      }}
+                    />
+                  </Button>
+                  <div
+                    style={{
+                      color: "white",
+                      marginTop: "0.5rem",
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    {label}
+                  </div>
+                </MotionCol>
+              ))}
 
-          </Row>
-        </div>
-      )}
+            </Row>
+          </div>
+        )}
 
       </div>
 

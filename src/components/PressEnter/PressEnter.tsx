@@ -15,7 +15,7 @@ const PressEnter = () => {
         audio.play().catch(() => { });
         setTimeout(() => {
           navigate("/home");
-        }, 600);
+        }, 1000);
       }
     };
 
