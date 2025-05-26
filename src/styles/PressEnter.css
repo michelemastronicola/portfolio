@@ -1,0 +1,22 @@
+.press-enter-container {
+  background-color: black;
+  color: #00ffea;
+  font-family: 'Press Start 2P', monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blinking {
+  animation: blink 1s step-start infinite;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
