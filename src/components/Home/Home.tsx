@@ -7,22 +7,22 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [showButtons, setShowButtons] = useState(false);
-  const [delay, setDelay] = useState(60);
+  // const [delay, setDelay] = useState(60);
 
   const navigate = useNavigate();
 
   const MotionCol = motion(Col);
 
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Enter") {
-        setDelay(0);
-      }
-    };
+  // useEffect(() => {
+  //   const handleKey = (e: KeyboardEvent) => {
+  //     if (e.key === "Enter") {
+  //       setDelay(0);
+  //     }
+  //   };
 
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, []);
+  //   window.addEventListener("keydown", handleKey);
+  //   return () => window.removeEventListener("keydown", handleKey);
+  // }, []);
 
   return (
     <>
@@ -46,7 +46,7 @@ __          ________ _      _____ ____  __  __ ______
               "and this is my personal website.",
               "",
               "Feel free to explore!",]}
-            delay={delay}
+            delay={60}
             onComplete={() => setShowButtons(true)}
           />
         </div>
@@ -67,8 +67,8 @@ __          ________ _      _____ ____  __  __ ______
                 onClick={() => {
                   if (index === 0) {
                     navigate("/aboutMe");
-                  } else {
-                    navigate("/aboutMe");
+                  } else if (index === 2) {
+                    navigate("/contacts");
                   }
                 }}
                 >

@@ -3,8 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import PressEnter from "./components/PressEnter/PressEnter";
 import AboutMe from "./components/AboutMe/AboutMe";
+import useDeviceDetection from "./components/common/UseDeviceDetection";
 
 function App() {
+
+  useDeviceDetection();
+
   return (
     <BrowserRouter>
       <Routes>

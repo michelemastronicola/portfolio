@@ -11,7 +11,7 @@ const PressEnter = () => {
       if (e.key === "Enter") {
         setClicked(true);
         const audio = new Audio("/sounds/coin.mp3");
-        audio.volume = 0.1;
+        audio.volume = 0.3;
         audio.play().catch(() => { });
         setTimeout(() => {
           navigate("/home");
