@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 interface TypingTextProps {
   lines?: string[];
@@ -8,14 +9,16 @@ interface TypingTextProps {
   thirdLines?: string[];
   delay?: number;
   onComplete?: () => void;
+  contacts?: boolean;
 }
 
-const TypingText = ({ lines, firstlines, secondLines, thirdLines, delay = 50, onComplete }: TypingTextProps) => {
+const TypingText = ({ lines, firstlines, secondLines, thirdLines, delay = 50, onComplete, contacts }: TypingTextProps) => {
   const [phase, setPhase] = useState<"first" | "second" | "third" | "done">("first");
   const [text, setText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
   const [completed, setCompleted] = useState(false);
-  
+
+  const muted = useSelector((state: RootState) => state.audio.muted);
 
   const getCurrentLines = () => {
     if (lines) {
@@ -123,12 +126,16 @@ const TypingText = ({ lines, firstlines, secondLines, thirdLines, delay = 50, on
           const audio = new Audio("/sounds/type.mp3");
           audio.volume = 0.15;
           audio.playbackRate = 0.8 + Math.random() * 0.3;
-          audio.play().catch(() => { });
+          if (!muted) {
+            audio.play().catch(() => { });
+          }
         } else if (!lines && delay > 0 && char !== " " && char !== "\n" && charIndex % 5 === 0) {
           const audio = new Audio("/sounds/type.mp3");
           audio.volume = 0.15;
           audio.playbackRate = 0.8 + Math.random() * 0.3;
-          audio.play().catch(() => { });
+          if (!muted) {
+            audio.play().catch(() => { });
+          }        
         }
         setText(prev => prev + char);
         setCharIndex(prev => prev + 1);

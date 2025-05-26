@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.extras-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #b300ff;
+  text-decoration: underline;
+  margin: 2rem 0 1rem;
+  letter-spacing: 2px;
+}
+
 
 .home-container {
   background: url("/public/images/gifbg.gif") no-repeat center center fixed;
@@ -10,6 +21,67 @@
   gap: 1rem;
   min-height: 100vh;
 }
+
+.extras-glitch {
+  position: relative;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #b300ff;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  text-decoration: underline;
+  letter-spacing: 2px;
+  animation: flicker 3s infinite;
+}
+
+.extras-glitch::before,
+.extras-glitch::after {
+  content: 'EXTRAS';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #ff00c8;
+  z-index: -1;
+}
+
+.extras-glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitch1 1s infinite;
+}
+
+.extras-glitch::after {
+  left: -2px;
+  text-shadow: 2px 0 blue;
+  animation: glitch2 1.5s infinite;
+}
+
+@keyframes glitch1 {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-3px, 0); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(3px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes glitch2 {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(1px, -1px); }
+  30% { transform: translate(2px, 1px); }
+  50% { transform: translate(-1px, -2px); }
+  70% { transform: translate(-3px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+  60% { opacity: 0.7; }
+  70% { opacity: 1; }
+}
+
 
 .ascii-title {
   font-family: 'VT323', monospace;

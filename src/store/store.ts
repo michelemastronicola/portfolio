@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { deviceReducer } from "./slices/deviceSlice";
+import { deviceReducer } from "./deviceSlice";
+import { audioReducer } from "./audioSlice";
 
 export const store = configureStore({
   reducer: {
     device: deviceReducer,
+    audio: audioReducer,
   },
 });
 

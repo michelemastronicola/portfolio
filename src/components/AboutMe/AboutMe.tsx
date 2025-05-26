@@ -4,14 +4,17 @@ import { Button, Col, Row } from "reactstrap";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import TypingText from "../common/TypingText";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 const AboutMe = () => {
   const [showButtons, setShowButtons] = useState(false);
   const [showBackButton, setShowBackButton] = useState(false);
 
   const navigate = useNavigate();
-
   const MotionCol = motion(Col);
+
+  const muted = useSelector((state: RootState) => state.audio.muted);
 
   return (
     <>
@@ -67,7 +70,9 @@ const AboutMe = () => {
                   onClick={() => {
                     const audio = new Audio("/sounds/back.mp3");
                     audio.volume = 0.3;
-                    audio.play().catch(() => { });
+                    if (!muted) {
+                      audio.play().catch(() => { });
+                    }
                     setTimeout(() => {
                       navigate("/home");
                     }, 600)

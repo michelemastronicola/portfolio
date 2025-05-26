@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/PressEnter.css";
+import { useSelector } from "react-redux";
 
 const PressEnter = () => {
   const navigate = useNavigate();
   const [clicked, setClicked] = useState(false);
+
+  const muted = useSelector((state: any) => state.audio.muted);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -29,7 +32,9 @@ const PressEnter = () => {
         setClicked(true);
         const audio = new Audio("/sounds/coin.mp3");
         audio.volume = 0.1;
-        audio.play().catch(() => { });
+        if (!muted) {
+          audio.play().catch(() => { });
+        }
         setTimeout(() => {
           navigate("/home");
         }, 600);
