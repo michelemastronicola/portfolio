@@ -85,39 +85,6 @@ const TypingText = ({ lines, firstlines, secondLines, thirdLines, delay = 50, on
     }
   };
 
-  // useEffect(() => {
-  //   const handleKey = (e: KeyboardEvent) => {
-  //     if (e.key === "Enter") {
-  //       if (charIndex < fullText.length) {
-  //         setCharIndex(fullText.length);
-  //         console.log("fullText", fullText);
-  //         setText(fullText);
-  //         console.log("Skipping to end of text");
-  //       } else {
-  //         if (!lines && phase === "first") {
-  //           console.log("Moving to second phase");
-  //           setPhase("second");
-  //           setCharIndex(0);
-  //           setText("");
-  //         } else if (!lines && phase === "second") {
-  //           console.log("Moving to third phase");
-  //           setPhase("third");
-  //           setCharIndex(0);
-  //           setText("");
-  //         } else if (!lines && phase === "third") {
-  //           console.log("Moving to done phase");
-  //           setPhase("done");
-  //           setCompleted(true);
-  //         }
-  //       }
-  //     }
-  //   };
-
-  //   window.addEventListener("keydown", handleKey);
-  //   return () => window.removeEventListener("keydown", handleKey);
-  // }, [charIndex, fullText, phase]);
-
-
   useEffect(() => {
     if (charIndex < fullText.length) {
       const timeout = setTimeout(() => {

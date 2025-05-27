@@ -76,12 +76,12 @@
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 1; }
+  0% { opacity: 0; }
   50% { opacity: 0.9; }
   60% { opacity: 0.7; }
-  70% { opacity: 1; }
+  70% { opacity: 0.55; }
+  100% { opacity: 1; }
 }
-
 
 .ascii-title {
   font-family: 'VT323', monospace;
