@@ -1,0 +1,7 @@
+.global-background {
+  transition:
+    background 0.1s linear,
+    filter 0.1s linear;
+  will-change: background, filter;
+}
+

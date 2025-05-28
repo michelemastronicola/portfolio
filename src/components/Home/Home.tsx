@@ -16,6 +16,10 @@ const Home = () => {
   const muted = useSelector((state: RootState) => state.audio.muted);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    console.log("showButtons:", showButtons);
+  }, [showButtons]);
+
   return (
     <>
       <div className="home-container">
@@ -60,7 +64,7 @@ __          ________ _      _____ ____  __  __ ______
                       const audio = new Audio("/sounds/forward.wav");
                       audio.volume = 0.3;
                       if (!muted) {
-                      audio.play().catch(() => { });
+                        audio.play().catch(() => { });
                       }
                       if (index === 0) {
                         setTimeout(() => {
@@ -98,7 +102,6 @@ __          ________ _      _____ ____  __  __ ______
               ))}
 
             </Row>
-
 
             <MotionCol
               className="extras-glitch"
@@ -138,14 +141,14 @@ __          ________ _      _____ ____  __  __ ______
                     }}
                   >
                     <img
-                    src={
-                      index === 0
-                        ? "/images/gif4.gif"
-                        : muted
-                          ? "/images/gif5.gif"
-                          : "/images/gif6.gif"
-                    }                      
-                    alt={`gif-${label}`}
+                      src={
+                        index === 0
+                          ? "/images/gif4.gif"
+                          : muted
+                            ? "/images/gif5.gif"
+                            : "/images/gif6.gif"
+                      }
+                      alt={`gif-${label}`}
                       style={{
                         width: "100%",
                         maxWidth: "100px",
