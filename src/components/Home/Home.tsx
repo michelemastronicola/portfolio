@@ -10,6 +10,7 @@ import { toggleMute } from "../../store/audioSlice";
 
 const Home = () => {
   const [showButtons, setShowButtons] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const navigate = useNavigate();
   const MotionCol = motion(Col);
 
@@ -19,6 +20,12 @@ const Home = () => {
   useEffect(() => {
     console.log("showButtons:", showButtons);
   }, [showButtons]);
+
+  useEffect(() => {
+  if (showButtons && !hasAnimated) {
+    setHasAnimated(true);
+  }
+}, [showButtons, hasAnimated]);
 
   return (
     <>
@@ -55,7 +62,7 @@ __          ________ _      _____ ____  __  __ ______
                   xs="6"
                   md="3"
                   className="d-flex flex-column align-items-center p-2"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={hasAnimated ? false : { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.3, duration: 2 }}
                 >
@@ -105,7 +112,7 @@ __          ________ _      _____ ____  __  __ ______
 
             <MotionCol
               className="extras-glitch"
-              initial={{ opacity: 0, y: 20 }}
+              initial={hasAnimated ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 4 * 0.3, duration: 2 }}
             >
@@ -119,7 +126,7 @@ __          ________ _      _____ ____  __  __ ______
                   xs="6"
                   md="2"
                   className="d-flex flex-column align-items-center p-2"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={hasAnimated ? false : { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.3, duration: 2 }}
                 >
