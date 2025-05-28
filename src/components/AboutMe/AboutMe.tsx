@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 
 const AboutMe = () => {
-  const [showButtons, setShowButtons] = useState(false);
   const [showBackButton, setShowBackButton] = useState(false);
 
   const navigate = useNavigate();

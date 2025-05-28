@@ -141,7 +141,7 @@ const TypingText = ({ lines, firstlines, secondLines, thirdLines, delay = 50, on
       <div className="final-line-wrapper">
         <pre className="animated-text align-left">{firstText}</pre>
         <pre className={!isMobile ? "animated-text align-center" : "animated-text align-left"}>{secondText}</pre>
-        <pre className={!isMobile ? "animated-text align-rigth" : "animated-text align-left"}>{thirdtext}</pre>
+        <pre className={!isMobile ? "animated-text align-right" : "animated-text align-left"}>{thirdtext}</pre>
       </div>
     </>
 

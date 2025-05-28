@@ -7,6 +7,7 @@ import Contacts from "./components/Contacts/Contacts";
 import useDeviceDetection from "./components/common/UseDeviceDetection";
 import useReactiveBackground from "./components/common/UseReactiveBackground";
 import "./styles/App.css";
+import ReactiveOscilloscope from "./components/common/ReactiveOscilloscope";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const AppRoutes = () => {
 
   return (
     <div className="global-background">
+      <ReactiveOscilloscope />
       <Routes>
         <Route path="/" element={<PressEnter />} />
         <Route path="/home" element={<Home />} />
