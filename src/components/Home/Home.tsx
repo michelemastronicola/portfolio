@@ -7,10 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { toggleMute } from "../../store/audioSlice";
+import AnimatedButton from "./AnimatedButton";
+import ExtrasLabel from "./ExtrasLabel";
 
 const Home = () => {
   const [showButtons, setShowButtons] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const navigate = useNavigate();
   const MotionCol = motion(Col);
 
@@ -20,12 +21,6 @@ const Home = () => {
   useEffect(() => {
     console.log("showButtons:", showButtons);
   }, [showButtons]);
-
-  useEffect(() => {
-  if (showButtons && !hasAnimated) {
-    setHasAnimated(true);
-  }
-}, [showButtons, hasAnimated]);
 
   return (
     <>
@@ -57,123 +52,42 @@ __          ________ _      _____ ____  __  __ ______
           <div className="button-wrapper">
             <Row className="text-center w-100 m-0 justify-content-center">
               {["about me", "about this project", "contacts", " wip"].map((label, index) => (
-                <MotionCol
-                  key={index}
-                  xs="6"
-                  md="3"
-                  className="d-flex flex-column align-items-center p-2"
-                  initial={hasAnimated ? false : { opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.3, duration: 2 }}
-                >
-                  <Button color="dark" className="p-0 border-0 bg-transparent"
+                  <AnimatedButton
+                    key={label}
+                    index={index}
+                    label={label}
+                    gifSrc={`/images/gif${index + 1}.gif`}
                     onClick={() => {
                       const audio = new Audio("/sounds/forward.wav");
                       audio.volume = 0.3;
-                      if (!muted) {
-                        audio.play().catch(() => { });
-                      }
-                      if (index === 0) {
-                        setTimeout(() => {
-                          navigate("/aboutMe");
-                        }, 600)
-                      }
-                      else if (index === 2) {
-                        setTimeout(() => {
-                          navigate("/contacts");
-                        }, 600)
-                      }
+                      if (!muted) audio.play().catch(() => {});
+                      if (index === 0) setTimeout(() => navigate("/aboutMe"), 600);
+                      else if (index === 2) setTimeout(() => navigate("/contacts"), 600);
                     }}
-                  >
-                    <img
-                      src={`/images/gif${index + 1}.gif`}
-                      alt={`gif-${label}`}
-                      style={{
-                        width: "100%",
-                        maxWidth: "100px",
-                        height: "100px",
-                        objectFit: "contain",
-                      }}
-                    />
-                  </Button>
-                  <div
-                    style={{
-                      color: "white",
-                      marginTop: "0.5rem",
-                      fontFamily: "monospace",
-                    }}
-                  >
-                    {label}
-                  </div>
-                </MotionCol>
+                  />
               ))}
 
             </Row>
 
-            <MotionCol
-              className="extras-glitch"
-              initial={hasAnimated ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 4 * 0.3, duration: 2 }}
-            >
-              EXTRAS
-            </MotionCol>
+            <ExtrasLabel />
 
             <Row className="text-center w-100 m-0 justify-content-center" >
-              {["change theme", muted ? "unmute" : "mute"].map((label, index) => (
-                <MotionCol
-                  key={index + 4}
-                  xs="6"
-                  md="2"
-                  className="d-flex flex-column align-items-center p-2"
-                  initial={hasAnimated ? false : { opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.3, duration: 2 }}
-                >
-                  <Button color="dark" className="p-0 border-0 bg-transparent"
+              {["change theme", muted ? "unmute" : "mute"].map((label, index) => ( 
+
+                  <AnimatedButton
+                    key={label}
+                    index={index}
+                    label={label}
+                    gifSrc={index === 0 ? "/images/gif4.gif" : index === 1 && muted? "/images/gif5.gif" : "/images/gif6.gif"}
                     onClick={() => {
                       const audio = new Audio("/sounds/forward.wav");
                       audio.volume = 0.3;
-                      if (!muted && index !== 1) {
-                        audio.play().catch(() => { });
-                      }
-                      if (index === 0) {
-                        setTimeout(() => {
-                          navigate("/aboutMe");
-                        }, 600)
-                      }
-                      else {
-                        dispatch(toggleMute())
-                      }
+                      if (!muted) audio.play().catch(() => {});
+                      if (index === 0) console.log("Change theme clicked");
+                      else if (index === 1) dispatch(toggleMute());
                     }}
-                  >
-                    <img
-                      src={
-                        index === 0
-                          ? "/images/gif4.gif"
-                          : muted
-                            ? "/images/gif5.gif"
-                            : "/images/gif6.gif"
-                      }
-                      alt={`gif-${label}`}
-                      style={{
-                        width: "100%",
-                        maxWidth: "100px",
-                        height: "100px",
-                        objectFit: "contain",
-                      }}
-                    />
-                  </Button>
-                  <div
-                    style={{
-                      color: "white",
-                      marginTop: "0.5rem",
-                      fontFamily: "monospace",
-                    }}
-                  >
-                    {label}
-                  </div>
-                </MotionCol>
+                  />
+
               ))}
             </Row>
           </div>

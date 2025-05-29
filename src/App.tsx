@@ -10,7 +10,6 @@ import "./styles/App.css";
 import ReactiveOscilloscope from "./components/common/ReactiveOscilloscope";
 
 const AppRoutes = () => {
-  const location = useLocation();
 
   useDeviceDetection();
   useReactiveBackground(); 
