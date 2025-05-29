@@ -1,0 +1,54 @@
+.retro-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.retro-modal {
+  background-color: black;
+  color: lime;
+  border: 3px solid lime;
+  font-family: 'Press Start 2P', monospace;
+  padding: 2rem;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.retro-modal h2 {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.retro-modal button {
+  background: black;
+  border: 2px solid lime;
+  color: lime;
+  font-family: 'Press Start 2P', monospace;
+  padding: 0.5rem;
+  width: 100%;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.retro-modal button:hover {
+  background: lime;
+  color: black;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
