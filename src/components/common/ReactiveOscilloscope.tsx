@@ -12,6 +12,13 @@ const ReactiveOscilloscope = () => {
     const [dimensions, setDimensions] = useState({ width: window.innerWidth, height: window.innerHeight });
     const frameRef = useRef<number | null>(null);
 
+    const w = dimensions.width;
+    const h = dimensions.height;
+    const r = Math.min(w, h) * 0.4;
+    const size = r * 2;
+    const cx = size / 2;
+    const cy = size / 2;
+
     useEffect(() => {
         const handleResize = () => setDimensions({ width: window.innerWidth, height: window.innerHeight });
         window.addEventListener("resize", handleResize);
@@ -32,12 +39,6 @@ const ReactiveOscilloscope = () => {
 
         const animate = () => {
             analyser.getByteTimeDomainData(oscArray);
-
-            const w = dimensions.width;
-            const h = dimensions.height;
-            const cx = w / 2;
-            const cy = h / 2;
-            const r = Math.min(w, h) * 0.4;
 
             // Trova l'offset dove la differenza tra due punti consecutivi (ciclo chiuso) è minima
             let minDiff = Infinity;
@@ -82,13 +83,13 @@ const ReactiveOscilloscope = () => {
 
     return (
         <Stage
-            width={dimensions.width}
-            height={dimensions.height}
+            width={size}
+            height={size}
             style={{
                 position: "absolute",
-                top: 0,
-                left: 0,
-                pointerEvents: "none", // così i click passano sotto
+                top: `calc(50% - ${size / 2}px)`,
+                left: `calc(50% - ${size / 2}px)`,
+                pointerEvents: "none",
                 zIndex: -1,
             }}
         >
