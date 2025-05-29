@@ -7,11 +7,12 @@ type Props = {
   gifSrc: string;
   onClick: () => void;
   index: number;
+  size?: number;
 };
 
 const MotionCol = motion(Col);
 
-const AnimatedButton: React.FC<Props> = ({ label, gifSrc, onClick, index }) => (
+const AnimatedButton: React.FC<Props> = ({ label, gifSrc, onClick, index, size }) => (
   <MotionCol
     xs="6"
     md="3"
@@ -26,8 +27,8 @@ const AnimatedButton: React.FC<Props> = ({ label, gifSrc, onClick, index }) => (
         alt={`gif-${label}`}
         style={{
           width: "100%",
-          maxWidth: "100px",
-          height: "100px",
+          maxWidth: size ? `${size}px` : "100px",
+          height: size ? `${size}px` : "100px",
           objectFit: "contain",
         }}
       />

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { toggleMute } from "../../store/audioSlice";
-import AnimatedButton from "./AnimatedButton";
+import AnimatedButton from "../common/AnimatedButton";
 import ExtrasLabel from "./ExtrasLabel";
 
 const Home = () => {
@@ -51,7 +51,7 @@ __          ________ _      _____ ____  __  __ ______
         {showButtons && (
           <div className="button-wrapper">
             <Row className="text-center w-100 m-0 justify-content-center">
-              {["about me", "about this project", "contacts", " wip"].map((label, index) => (
+              {["about me", "about this project", "contacts", "themed projects"].map((label, index) => (
                   <AnimatedButton
                     key={label}
                     index={index}
