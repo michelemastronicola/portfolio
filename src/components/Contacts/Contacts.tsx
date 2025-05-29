@@ -18,7 +18,7 @@ const Contacts = () => {
   return (
     <>
       <div className="home-container">
-        <pre className="ascii-title">
+        {/* <pre className="ascii-title">
           {String.raw`
    _____ ____  _   _ _______       _____ _______ _____ 
   / ____\/ __ \| \ | |__   __|/\   / ____|__   __/ ____|
@@ -27,7 +27,10 @@ const Contacts = () => {
  | |___| |__| | |\  |  | |/ ____ \ |____   | |  ____) |
   \_____\____/|_| \_|  |_/_/    \_\_____|  |_| |_____/ 
             `}
-        </pre>
+        </pre> */}
+        <h1 className="retro-title">
+          Contacts
+        </h1>
         <div className="animated-text-area">
           <TypingText
             lines={[

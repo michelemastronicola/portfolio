@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
 
 .extras-label {
   font-family: 'Press Start 2P', cursive;
@@ -10,10 +12,7 @@
   letter-spacing: 2px;
 }
 
-
 .home-container {
-  /* background: url("/public/images/gifbg.gif") no-repeat center center fixed;
-  background: radial-gradient(circle at center, #b300ff 5%, #29003a 40%, #000 100%); */
   background-size: cover;
   color: white;
   padding: 2rem;
@@ -105,6 +104,59 @@
   }
 }
 
+.retro-title {
+  font-family: 'Rubik Iso';
+  font-size: 10rem;
+  color: #00ffcc;
+  text-align: left;
+  letter-spacing: 4px;
+  animation: sparkleText 2s infinite steps(1);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .retro-title {
+    font-size: 4rem;
+    letter-spacing: 2px;
+  }
+}
+
+@keyframes sparkleText {
+  0%, 100% {
+    color: #00ffcc;
+  }
+  10% {
+    color: #ffffff;
+  }
+  20% {
+    color: #00ffcc;
+  }
+  30% {
+    color: #00ffcc;
+  }
+  40% {
+    color: #00ffff;
+  }
+  50% {
+    color: #00ffcc;
+  }
+  60% {
+    color: #ffffff;
+  }
+  70% {
+    color: #00ffcc;
+  }
+  80% {
+    color: #00ffff;
+  }
+  90% {
+    color: #00ffcc;
+  }
+}
+
+
 .animated-text-area {
   font-size: 1.1rem;
   color: white;
@@ -113,14 +165,12 @@
   overflow-wrap: break-word;
 }
 
-.animated-text {
-  font-family: 'VT323', monospace;
-  font-size: 2rem;
-  color: white;
-  white-space: pre-wrap;
-  max-width: 100%;
-  word-break: break-word;
+@media (max-width: 768px) {
+  .animated-text-area {
+    font-size: 0.5rem;
+  }
 }
+
 .button-wrapper {
   min-height: 250px; 
 }

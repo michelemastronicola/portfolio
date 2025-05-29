@@ -7,7 +7,7 @@ import TypingText from "../common/TypingText";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 
-const AboutMe = () => {
+const AboutProject = () => {
   const [showBackButton, setShowBackButton] = useState(false);
 
   const navigate = useNavigate();
@@ -18,19 +18,8 @@ const AboutMe = () => {
   return (
     <>
       <div className="aboutme-container">
-        {/* <pre className="ascii-title">
-          {String.raw`
-           ____   ____  _    _ _______   __  __ ______ 
-     /\   |  _ \ / __ \| |  | |__   __| |  \/  |  ____|
-    /  \  | |_) | |  | | |  | |  | |    | \  / | |__   
-   / /\ \ |  _ <| |  | | |  | |  | |    | |\/| |  __|  
-  / ____ \| |_) | |__| | |__| |  | |    | |  | | |____ 
- /_/    \_\____/ \____/ \____/   |_|    |_|  |_|______|                                                    
-                                                                                                   
-      `}
-        </pre> */}
         <h1 className="retro-title">
-          About me
+          About this project
         </h1>
         <div className="animated-text-area">
           <TypingText
@@ -107,4 +96,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default AboutProject;

@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <>
       <div className="home-container">
-        <div className="ascii-title">
+        {/* <div className="ascii-title">
           {String.raw`
 __          ________ _      _____ ____  __  __ ______ 
 \ \        / /  ____| |    / ____/ __ \|  \/  |  ____|
@@ -34,7 +34,10 @@ __          ________ _      _____ ____  __  __ ______
     \  /\  /  | |____| |___| |___| |__| | |  | | |____ 
     \/  \/   |______|______\_____\____/|_|  |_|______|                                              
       `}
-        </div>
+        </div> */}
+        <h1 className="retro-title">
+          Welcome
+        </h1>
         <div className="animated-text-area">
           <TypingText
             lines={[
@@ -62,6 +65,7 @@ __          ________ _      _____ ____  __  __ ______
                       audio.volume = 0.3;
                       if (!muted) audio.play().catch(() => {});
                       if (index === 0) setTimeout(() => navigate("/aboutMe"), 600);
+                      else if (index === 1) setTimeout(() => navigate("/aboutProject"), 600);
                       else if (index === 2) setTimeout(() => navigate("/contacts"), 600);
                     }}
                   />

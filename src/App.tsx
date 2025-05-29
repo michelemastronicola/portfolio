@@ -8,6 +8,7 @@ import useDeviceDetection from "./components/common/UseDeviceDetection";
 import useReactiveBackground from "./components/common/UseReactiveBackground";
 import "./styles/App.css";
 import ReactiveOscilloscope from "./components/common/ReactiveOscilloscope";
+import AboutProject from "./components/AboutProject/AboutProject";
 
 const AppRoutes = () => {
 
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Route path="/" element={<PressEnter />} />
         <Route path="/home" element={<Home />} />
         <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="/aboutProject" element={<AboutProject />} />
         <Route path="/contacts" element={<Contacts />} />
       </Routes>
     </div>
