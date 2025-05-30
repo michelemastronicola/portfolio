@@ -87,7 +87,6 @@
 
 
 @keyframes flickerRetro {
-
     0%,
     100% {
         opacity: 1;
@@ -99,3 +98,69 @@
         text-shadow: 0 0 3px #00ff99;
     }
 }
+
+.result-text {
+    font-weight: bold;
+    margin: 1.5rem 0;
+    font-size: 1.6rem;
+    font-family: "Press Start 2P", monospace;
+    text-align: center  ;
+}
+
+@media (max-width: 768px) {
+    .result-text {
+        font-size: 1rem;
+    }
+}
+
+.result-text.correct {
+    color: lime;
+}
+
+.result-text.wrong {
+    color: red;
+}
+
+.fun-facts {
+    margin: 10rem auto 0;
+    max-width: 40ch; 
+    font-size: 1rem;
+    font-family: "Press Start 2P", monospace;
+    color: #00ffff;
+    line-height: 1.7;
+    padding: 0 1rem;
+    animation: flickerFact 3s infinite;
+    text-align: center;
+    word-break: break-word;
+}
+
+
+@media (max-width: 768px) {
+    .fun-facts {
+        font-size: 0.7rem;
+    }
+}
+
+@keyframes flickerFact {
+    0%   { opacity: 1; text-shadow: 0 0 2px #00ffff; }
+    5%   { opacity: 0.8; text-shadow: 0 0 1px #00ffff; }
+    10%  { opacity: 0.9; text-shadow: 0 0 3px #00ffff; }
+    15%  { opacity: 0.7; text-shadow: 0 0 2px #00ffff; }
+    20%  { opacity: 1; text-shadow: 0 0 4px #00ffff; }
+    100% { opacity: 1; text-shadow: 0 0 2px #00ffff; }
+}
+
+.final-message {
+    font-size: 1.3rem;
+    margin: 10rem 0 5rem 0;
+    font-family: "Press Start 2P", monospace;
+    color: #ffcc00;
+    text-shadow: 0 0 5px #ffcc00;
+}
+
+@media (max-width: 768px) {
+    .final-message {
+        font-size: 0.9rem;
+    }
+}
+

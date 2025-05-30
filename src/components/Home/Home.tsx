@@ -66,7 +66,7 @@ __          ________ _      _____ ____  __  __ ______
         {showButtons && (
           <div className="button-wrapper">
             <Row className="text-center w-100 m-0 justify-content-center">
-              {["about me", "about this project", "contacts", "themed projects"].map((label, index) => (
+              {["about me", "about this project", "contacts", "other projects"].map((label, index) => (
                 <AnimatedButton
                   key={label}
                   index={index}

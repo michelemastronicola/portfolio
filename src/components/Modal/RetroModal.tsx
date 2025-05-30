@@ -11,7 +11,7 @@ const RetroModal: React.FC<Props> = ({ onClose, onSelect }) => {
     <div className="retro-modal-backdrop">
       <div className="retro-modal">
         <h2>Select a Project</h2>
-        <button onClick={() => onSelect("/retroTrivia")}>Retro Trivia</button>
+        <button onClick={() => onSelect("/retroTrivia")}>Quizcade</button>
         <button onClick={() => onSelect("/theme2")}>???</button>
         <button onClick={() => onSelect("/theme3")}>???</button>
         <span className="close-btn" onClick={onClose}>X</span>
