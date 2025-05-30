@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setIsMobile } from '../../store/deviceSlice';
+import { setIsMobile } from '../../../store/deviceSlice';
 
 const UseDeviceDetection = () => {
   const dispatch = useDispatch();

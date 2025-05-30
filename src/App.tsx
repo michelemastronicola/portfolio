@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Home from "./components/Home/Home";
-import PressEnter from "./components/PressEnter/PressEnter";
-import AboutMe from "./components/AboutMe/AboutMe";
-import Contacts from "./components/Contacts/Contacts";
-import useDeviceDetection from "./components/common/UseDeviceDetection";
-import useReactiveBackground from "./components/common/UseReactiveBackground";
-import "./styles/App.css";
-import ReactiveOscilloscope from "./components/common/ReactiveOscilloscope";
-import AboutProject from "./components/AboutProject/AboutProject";
-import RetroTrivia from "./components/Modal/RetroTrivia";
+import Home from "./components/retro/Home/Home";
+import PressEnter from "./components/retro/PressEnter/PressEnter";
+import AboutMe from "./components/retro/AboutMe/AboutMe";
+import Contacts from "./components/retro/Contacts/Contacts";
+import useDeviceDetection from "./components/retro/common/UseDeviceDetection";
+import useReactiveBackground from "./components/retro/common/UseReactiveBackground";
+import "./styles/retro/App.css";
+import ReactiveOscilloscope from "./components/retro/common/ReactiveOscilloscope";
+import AboutProject from "./components/retro/AboutProject/AboutProject";
+import RetroTrivia from "./components/retro/Modal/RetroTrivia";
 
 const AppRoutes = () => {
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import TypingText from "../common/TypingText";
-import "../../styles/Home.css";
+import "../../../styles/retro/Home.css";
 import { Button, Col, Row } from "reactstrap";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { RootState } from "../../store/store";
+import { RootState } from "../../../store/store";
 import { useSelector } from "react-redux";
 import AnimatedButton from "../common/AnimatedButton";
 

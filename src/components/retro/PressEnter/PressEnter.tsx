@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/PressEnter.css";
+import "../../../styles/retro/PressEnter.css";
 import { useSelector } from "react-redux";
 
 const PressEnter = () => {

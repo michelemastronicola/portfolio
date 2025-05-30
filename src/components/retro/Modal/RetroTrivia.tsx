@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/RetroTrivia.css";
+import "../../../styles/retro/RetroTrivia.css";
 import { useNavigate } from "react-router-dom";
 import { Button, Row } from "reactstrap";
 import AnimatedButton from "../common/AnimatedButton";

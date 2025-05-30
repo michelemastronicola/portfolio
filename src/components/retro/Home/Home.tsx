@@ -1,33 +1,43 @@
 import React, { useEffect, useState } from "react";
 import TypingText from "../common/TypingText";
-import "../../styles/Home.css";
+import "../../../styles/retro/Home.css";
 import { Col, Row } from "reactstrap";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import { toggleMute } from "../../store/audioSlice";
+import { RootState } from "../../../store/store";
+import { toggleMute } from "../../../store/audioSlice";
 import AnimatedButton from "../common/AnimatedButton";
 import ExtrasLabel from "./ExtrasLabel";
 import RetroModal from "../Modal/RetroModal";
+import { setTheme, setThemeLoading } from "../../../store/themeSlice";
 
 const Home = () => {
   const [showButtons, setShowButtons] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
-  const MotionCol = motion(Col);
 
   const muted = useSelector((state: RootState) => state.audio.muted);
   const isMobile = useSelector((state: RootState) => state.device.isMobile);
+  const theme = useSelector((state: RootState) => state.theme.currentTheme);
+  const loading = useSelector((state: RootState) => state.theme.loading);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("showButtons:", showButtons);
-  }, [showButtons]);
+    console.log("theme:", theme);
+  }, [theme]);
 
   return (
     <>
       <div className="home-container">
+
+        {loading && (
+          <div className="theme-loader-overlay">
+            <p className="theme-loader-text">Loading new theme...</p>
+          </div>
+        )}
+
         {showModal && (
           <RetroModal
             onClose={() => setShowModal(false)}
@@ -104,7 +114,18 @@ __          ________ _      _____ ____  __  __ ______
                     const audio = new Audio("/sounds/forward.wav");
                     audio.volume = 0.3;
                     if (!muted) audio.play().catch(() => { });
-                    if (index === 0) console.log("Change theme clicked");
+                    if (index === 0) {
+                      dispatch(setThemeLoading(true));
+                      const audio = new Audio("/sounds/loading.wav");
+                      audio.volume = 0.3;
+                      if (!muted) audio.play().catch(() => { });
+
+                      setTimeout(() => {
+                        dispatch(setTheme(theme === "retro" ? "classic" : "retro"));
+                        dispatch(setThemeLoading(false));
+                      }, 2000);
+                    }
+
                     else if (index === 1) dispatch(toggleMute());
                   }}
                 />

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/AboutMe.css";
+import "../../../styles/retro/AboutMe.css";
 import { Button, Col, Row } from "reactstrap";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import TypingText from "../common/TypingText";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../../store/store";
 import AnimatedButton from "../common/AnimatedButton";
 
 const AboutMe = () => {

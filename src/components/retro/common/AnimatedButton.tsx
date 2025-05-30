@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button, Col } from "reactstrap";
-import "../../styles/AnimatedButton.css";
+import "../../../styles/retro/AnimatedButton.css";
 
 type Props = {
   label: string;

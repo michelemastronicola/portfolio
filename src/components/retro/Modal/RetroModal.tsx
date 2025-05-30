@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/RetroModal.css"; 
+import "../../../styles/retro/RetroModal.css"; 
 
 type Props = {
   onClose: () => void;

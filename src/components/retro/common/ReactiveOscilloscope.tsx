@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Stage, Layer, Line } from "react-konva";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../../store/store";
 import { setupAudio, stopAudio } from "./AudioManager";
 import { useLocation } from "react-router-dom";
 
