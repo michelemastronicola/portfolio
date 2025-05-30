@@ -9,6 +9,19 @@
     animation: crtGlitch 0.5s linear;
 }
 
+.animated-button {
+  background-color: transparent !important;
+  -webkit-tap-highlight-color: transparent; /* rimuove highlight blu su iOS */
+}
+
+.animated-button:focus,
+.animated-button:active {
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
 @keyframes crtGlitch {
   0% {
     transform: translate(0);

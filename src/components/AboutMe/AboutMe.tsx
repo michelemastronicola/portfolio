@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import TypingText from "../common/TypingText";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import AnimatedButton from "../common/AnimatedButton";
 
 const AboutMe = () => {
   const [showBackButton, setShowBackButton] = useState(false);
@@ -14,6 +15,7 @@ const AboutMe = () => {
   const MotionCol = motion(Col);
 
   const muted = useSelector((state: RootState) => state.audio.muted);
+  const isMobile = useSelector((state: RootState) => state.device.isMobile);
 
   return (
     <>
@@ -62,43 +64,20 @@ const AboutMe = () => {
         {showBackButton && (
           <div className="button-wrapper">
             <Row className="text-center w-100 m-0 justify-content-center">
-              <MotionCol
-                xs="6"
-                md="3"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Button color="dark" className="p-0 border-0 bg-transparent"
-                  onClick={() => {
-                    const audio = new Audio("/sounds/back.mp3");
-                    audio.volume = 0.3;
-                    if (!muted) {
-                      audio.play().catch(() => { });
-                    }
-                    setTimeout(() => {
-                      navigate("/home");
-                    }, 600)
-                  }}>
-                  <img
-                    src={"/images/leftarrow.gif"}
-                    alt={"backgif"}
-                    style={{
-                      width: "150px",
-                      height: "150px",
-                    }}
-                  />
-                </Button>
-                <div
-                  style={{
-                    color: "white",
-                    fontFamily: "monospace",
-                    fontSize: "1.3rem",
-                  }}
-                >
-                  go back
-                </div>
-              </MotionCol>
+              <AnimatedButton
+                key={"back"}
+                index={0}
+                label={"go back"}
+                size={isMobile ? 80 : 120}
+                gifSrc={`/images/leftarrow.gif`}
+                onClick={() => {
+                  const audio = new Audio("/sounds/back.mp3");
+                  audio.volume = 0.3;
+                  if (!muted) audio.play().catch(() => { });
+                  setTimeout(() => navigate("/home"), 600);
+
+                }}
+              />
             </Row>
           </div>
         )}

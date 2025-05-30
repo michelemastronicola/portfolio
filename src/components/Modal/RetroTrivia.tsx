@@ -146,7 +146,8 @@ const RetroTrivia = () => {
             )}
 
             <div className="fun-facts">
-                <p>💡 <i>{currentFact}</i></p>
+                <p>💡 Did you know?</p>
+                 <i>{currentFact}</i>
             </div>
 
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TypingText from "../common/TypingText";
 import "../../styles/Home.css";
-import { Button, Col, Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,6 +18,7 @@ const Home = () => {
   const MotionCol = motion(Col);
 
   const muted = useSelector((state: RootState) => state.audio.muted);
+  const isMobile = useSelector((state: RootState) => state.device.isMobile);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -58,7 +59,8 @@ __          ________ _      _____ ____  __  __ ______
               "I'm a front-end developer",
               "and this is my personal website.",
               "",
-              "Feel free to explore!",]}
+              "Feel free to explore!",
+              "(and to change theme, for a more 'classic' experience)"]}
             delay={60}
             onComplete={() => setShowButtons(true)}
           />
@@ -71,6 +73,7 @@ __          ________ _      _____ ____  __  __ ______
                   key={label}
                   index={index}
                   label={label}
+                  size={isMobile ? 75 : 100}
                   gifSrc={`/images/gif${index + 1}.gif`}
                   onClick={() => {
                     const audio = new Audio("/sounds/forward.wav");
@@ -95,6 +98,7 @@ __          ________ _      _____ ____  __  __ ______
                   key={label}
                   index={index}
                   label={label}
+                  size={isMobile ? 75 : 100}
                   gifSrc={index === 0 ? "/images/gif4.gif" : index === 1 && muted ? "/images/gif5.gif" : "/images/gif6.gif"}
                   onClick={() => {
                     const audio = new Audio("/sounds/forward.wav");

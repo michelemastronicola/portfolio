@@ -14,6 +14,7 @@ const Contacts = () => {
   const MotionCol = motion(Col);
 
   const muted = useSelector((state: RootState) => state.audio.muted);
+  const isMobile = useSelector((state: RootState) => state.device.isMobile);
 
   return (
     <>
@@ -56,6 +57,7 @@ const Contacts = () => {
                   key={label}
                   index={index}
                   label={label}
+                  size={isMobile ? 80 : 120}
                   gifSrc={`/images/gif${index + 1}.gif`}
                   onClick={() => {
                     const audio = new Audio("/sounds/forward.wav");
@@ -73,10 +75,10 @@ const Contacts = () => {
                 key={"back"}
                 index={0}
                 label={"go back"}
-                size={150}
+                size={isMobile ? 80 : 120}
                 gifSrc={`/images/leftarrow.gif`}
                 onClick={() => {
-                  const audio = new Audio("/sounds/forward.wav");
+                  const audio = new Audio("/sounds/back.mp3");
                   audio.volume = 0.3;
                   if (!muted) audio.play().catch(() => { });
                   setTimeout(() => navigate("/home"), 600);
