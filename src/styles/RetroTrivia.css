@@ -1,0 +1,101 @@
+.trivia-container {
+    color: lime;
+    font-family: "Press Start 2P", monospace;
+    padding: 2rem;
+    text-align: center;
+    height: 100vh;
+}
+
+.retro-trivia-title {
+    font-size: 6rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    animation: flickerRetro 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .retro-trivia-title {
+        font-size: 3rem;
+    }
+}
+
+.question-text {
+    font-size: 1rem;
+    margin: 5rem 0 3rem 0;
+}
+
+.score-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.trivia-buttons button {
+    background-color: black;
+    color: lime;
+    border: 2px solid lime;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    font-family: "Press Start 2P", monospace;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.trivia-buttons button:focus,
+.trivia-buttons button:active,
+.trivia-buttons button:focus-visible {
+    outline: none;
+    box-shadow: none;
+    background-color: black;
+    color: lime;
+    outline: none;
+    box-shadow: none;
+}
+
+@media (hover: hover) {
+    .trivia-buttons button:hover {
+        background-color: lime;
+        color: black;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    button:focus {
+        outline: none !important;
+        box-shadow: none !important;
+        background-color: black !important;
+        color: lime !important;
+    }
+}
+
+.trivia-buttons button.clicked {
+    animation: buttonBounce 0.15s ease;
+}
+
+@keyframes buttonBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes flickerRetro {
+
+    0%,
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 5px #00ff99;
+    }
+
+    50% {
+        opacity: 0.8;
+        text-shadow: 0 0 3px #00ff99;
+    }
+}

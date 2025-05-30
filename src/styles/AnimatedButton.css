@@ -1,0 +1,67 @@
+.crt-label {
+    color: white;
+    margin-top: 0.5rem;
+    font-family: monospace;
+    transition: all 0.1s ease-in-out;
+}
+
+.animated-button:hover .crt-label {
+    animation: crtGlitch 0.5s linear;
+}
+
+@keyframes crtGlitch {
+  0% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+
+  10% {
+    transform: translate(1px, -1px);
+    text-shadow: -1px 0 red, 1px 0 blue;
+  }
+
+  20% {
+    transform: translate(-1px, 1px);
+    text-shadow: 1px 0 red, -1px 0 blue;
+  }
+
+  30% {
+    transform: translate(1px, -1px);
+    text-shadow: -1px 0 red, 1px 0 blue;
+  }
+
+  40% {
+    transform: translate(-1px, 1px);
+    text-shadow: 1px 0 blue, -1px 0 red;
+  }
+
+  50% {
+    transform: translate(1px, -1px);
+    text-shadow: -1px 0 blue, 1px 0 red;
+  }
+
+  60% {
+    transform: translate(-1px, 1px);
+    text-shadow: 1px 0 red, -1px 0 blue;
+  }
+
+  70% {
+    transform: translate(1px, -1px);
+    text-shadow: -1px 0 red, 1px 0 blue;
+  }
+
+  80% {
+    transform: translate(-1px, 1px);
+    text-shadow: 1px 0 blue, -1px 0 red;
+  }
+
+  90% {
+    transform: translate(1px, -1px);
+    text-shadow: -1px 0 blue, 1px 0 red;
+  }
+
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+}

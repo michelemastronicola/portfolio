@@ -108,7 +108,7 @@
   font-family: 'Rubik Iso';
   font-size: 10rem;
   color: #00ffcc;
-  text-align: left;
+  text-align: center;
   letter-spacing: 4px;
   animation: sparkleText 2s infinite steps(1);
   margin-bottom: 2rem;

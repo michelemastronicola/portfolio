@@ -9,6 +9,7 @@ import useReactiveBackground from "./components/common/UseReactiveBackground";
 import "./styles/App.css";
 import ReactiveOscilloscope from "./components/common/ReactiveOscilloscope";
 import AboutProject from "./components/AboutProject/AboutProject";
+import RetroTrivia from "./components/Modal/RetroTrivia";
 
 const AppRoutes = () => {
 
@@ -24,6 +25,7 @@ const AppRoutes = () => {
         <Route path="/aboutme" element={<AboutMe />} />
         <Route path="/aboutProject" element={<AboutProject />} />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/retroTrivia" element={<RetroTrivia />} />
       </Routes>
     </div>
   );

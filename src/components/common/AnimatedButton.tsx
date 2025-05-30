@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button, Col } from "reactstrap";
+import "../../styles/AnimatedButton.css";
 
 type Props = {
   label: string;
@@ -21,7 +22,7 @@ const AnimatedButton: React.FC<Props> = ({ label, gifSrc, onClick, index, size }
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: index * 0.3, duration: 2 }}
   >
-    <Button color="dark" className="p-0 border-0 bg-transparent" onClick={onClick}>
+    <Button color="dark" className="animated-button p-0 border-0 bg-transparent" onClick={onClick}>
       <img
         src={gifSrc}
         alt={`gif-${label}`}
@@ -32,8 +33,8 @@ const AnimatedButton: React.FC<Props> = ({ label, gifSrc, onClick, index, size }
           objectFit: "contain",
         }}
       />
+      <div className="crt-label">{label}</div>
     </Button>
-    <div style={{ color: "white", marginTop: "0.5rem", fontFamily: "monospace" }}>{label}</div>
   </MotionCol>
 );
 

@@ -36,10 +36,6 @@ const TypingText = ({ lines, firstlines, secondLines, thirdLines, delay = 50, on
 
   const isMobile = useSelector((state: any) => state.device.isMobile);
 
-  useEffect(() => {
-    console.log("isMobile:", isMobile);
-  }, [isMobile]);
-
   const fullText = getCurrentLines()?.join("\n") || "";
   const firstText = firstlines?.join("\n") || "";
   const secondText = secondLines?.join("\n") || "";
@@ -130,7 +126,7 @@ const TypingText = ({ lines, firstlines, secondLines, thirdLines, delay = 50, on
           return "align-left";
       }
     }
-    return "align-left";
+    return "align-center";
   };
 
   return (
