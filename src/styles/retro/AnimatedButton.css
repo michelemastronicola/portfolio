@@ -11,7 +11,7 @@
 
 .animated-button {
   background-color: transparent !important;
-  -webkit-tap-highlight-color: transparent; /* rimuove highlight blu su iOS */
+  -webkit-tap-highlight-color: transparent; 
 }
 
 .animated-button:focus,

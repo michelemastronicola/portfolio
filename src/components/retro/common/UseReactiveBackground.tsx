@@ -20,7 +20,6 @@ const useReactiveRadialBackground = () => {
     if (muted) {
       stopAudio();
       if (el) {
-        // Sfera viola statica
         el.style.background = `radial-gradient(circle at center, rgba(179, 0, 255, 0.7) 5%,rgb(41, 7, 56) 40%, #000 100%)`;
       }
       return;

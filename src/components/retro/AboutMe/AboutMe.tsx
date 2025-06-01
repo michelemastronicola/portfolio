@@ -20,17 +20,6 @@ const AboutMe = () => {
   return (
     <>
       <div className="aboutme-container">
-        {/* <pre className="ascii-title">
-          {String.raw`
-           ____   ____  _    _ _______   __  __ ______ 
-     /\   |  _ \ / __ \| |  | |__   __| |  \/  |  ____|
-    /  \  | |_) | |  | | |  | |  | |    | \  / | |__   
-   / /\ \ |  _ <| |  | | |  | |  | |    | |\/| |  __|  
-  / ____ \| |_) | |__| | |__| |  | |    | |  | | |____ 
- /_/    \_\____/ \____/ \____/   |_|    |_|  |_|______|                                                    
-                                                                                                   
-      `}
-        </pre> */}
         <h1 className="retro-title">
           About me
         </h1>
