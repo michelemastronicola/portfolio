@@ -1,5 +1,29 @@
+::-webkit-scrollbar {
+  width: 10px;
+  background: #18181b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #7c3aed 30%, #18181b 100%);
+  border-radius: 8px;
+  border: 2px solid #18181b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+}
+
+::-webkit-scrollbar-corner {
+  background: #18181b;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed #18181b;
+}
+
 .classic-layout {
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: #f9f9f9;

@@ -1,0 +1,17 @@
+.typing-effect {
+  font-family: 'Space Mono';
+  font-size: 2rem;
+  color: #e0e0e0;
+  white-space: pre;
+}
+
+.dynamic {
+  color: #7c3aed;
+}
+
+@media (max-width: 600px) {
+  .typing-effect {
+    white-space: normal;
+    word-break: break-word;
+  }
+}

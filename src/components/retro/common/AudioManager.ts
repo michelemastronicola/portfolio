@@ -8,7 +8,8 @@ export const setupAudio = () => {
 
   audio = new Audio("/sounds/retro-gaming.mp3");
   audio.loop = true;
-  audio.volume = 0.5;
+  // audio.volume = 0.5;
+  audio.volume = 0;
 
   ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
   src = ctx.createMediaElementSource(audio);

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import "../../styles/modern/ClassicNavbar.css";
-import { Button } from "reactstrap";
 
 const ClassicNavbar = () => {
   const isMobile = useSelector((state: RootState) => state.device.isMobile);

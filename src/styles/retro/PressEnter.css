@@ -1,5 +1,6 @@
 .press-enter-container {
-  background-color: black;
+  /* background-color: black; */
+  background: url("/public/images/hero.gif") center center / cover no-repeat;
   color: #00ffea;
   font-family: 'Press Start 2P', monospace;
   min-height: 100vh;

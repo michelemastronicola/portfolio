@@ -5,9 +5,9 @@ import ClassicNavbar from "./ClassicNavbar";
 import "../../styles/modern/ClassicLayout.css";
 
 const Hero = lazy(() => import("./sections/Hero"));
-const About = lazy(() => import("./sections/Hero"));
-const Projects = lazy(() => import("./sections/Hero"));
-const Contacts = lazy(() => import("./sections/Hero"));
+const About = lazy(() => import("./sections/About"));
+const Projects = lazy(() => import("./sections/Projects"));
+const Contacts = lazy(() => import("./sections/Contacts"));
 
 const ClassicHome = () => {
   const isMobile = useSelector((state: RootState) => state.device.isMobile);
