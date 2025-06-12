@@ -195,3 +195,65 @@
     transform: translateX(0);
   }
 }
+
+/* Contacts section */
+.contacts {
+  background-color: #0f0f0f;
+  color: white;
+}
+
+.contacts-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contacts-text h2 {
+  font-size: 2.5rem;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 1rem;
+}
+
+.contacts-text .highlight {
+  color: #7c3aed;
+}
+
+.contacts-text p {
+  font-size: 1.1rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-links a {
+  color: #7c3aed;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .contacts-text h2 {
+    font-size: 2rem;
+  }
+
+  .contacts-text p {
+    font-size: 1rem;
+  }
+
+  .contact-links a {
+    font-size: 1rem;
+  }
+}
