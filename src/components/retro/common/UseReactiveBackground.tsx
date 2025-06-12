@@ -7,9 +7,12 @@ import { setupAudio, stopAudio } from "./AudioManager";
 const useReactiveRadialBackground = () => {
   const location = useLocation();
   const muted = useSelector((state: RootState) => state.audio.muted);
+  const theme = useSelector((state: RootState) => state.theme.currentTheme); 
 
   useEffect(() => {
     const el = document.querySelector(".global-background") as HTMLElement;
+
+    if (theme !== "retro") return; 
 
     if (location.pathname === "/") {
       stopAudio();
@@ -29,7 +32,6 @@ const useReactiveRadialBackground = () => {
     if (!analyser) return;
 
     const dataArray = new Uint8Array(analyser.frequencyBinCount);
-
     let frameId: number;
 
     const animate = () => {
@@ -47,7 +49,7 @@ const useReactiveRadialBackground = () => {
     return () => {
       if (frameId) cancelAnimationFrame(frameId);
     };
-  }, [location.pathname, muted]);
+  }, [location.pathname, muted, theme]); 
 };
 
 export default useReactiveRadialBackground;

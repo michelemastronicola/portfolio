@@ -13,11 +13,11 @@
     animation: flickerRetro 2s infinite;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .retro-trivia-title {
         font-size: 3rem;
     }
-}
+} */
 
 .question-text {
     font-size: 1rem;
@@ -59,7 +59,7 @@
 }
 
 @media (hover: none) and (pointer: coarse) {
-    button:focus {
+    .trivia-buttons button:focus {
         outline: none !important;
         box-shadow: none !important;
         background-color: black !important;

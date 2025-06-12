@@ -24,10 +24,6 @@ const Home = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log("theme:", theme);
-  }, [theme]);
-
   return (
     <>
       <div className="home-container">
