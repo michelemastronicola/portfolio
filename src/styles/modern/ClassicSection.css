@@ -257,3 +257,43 @@
     font-size: 1rem;
   }
 }
+
+/* Projects section */
+
+.projects {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+}
+
+.project-card {
+  border: 2px solid #7c3aed;
+  border-radius: 8px;
+  width: 280px;
+  background-color: #f9f9f9;
+}
+
+.project-card h3 {
+  color: #7c3aed;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 90%;
+  }
+}

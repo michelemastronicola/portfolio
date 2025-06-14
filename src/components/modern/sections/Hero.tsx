@@ -7,11 +7,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { setTheme, setThemeLoading } from "../../../store/themeSlice";
 import { RootState } from "../../../store/store";
 import { toggleMute } from "../../../store/audioSlice";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state: RootState) => state.theme.currentTheme);
   const loading = useSelector((state: RootState) => state.theme.loading);
+  const muted = useSelector((state: RootState) => state.audio.muted);
+  const navigate = useNavigate();
   return (
     <div className="classic-section hero">
       {loading && (
@@ -29,10 +32,12 @@ const Hero = () => {
           </Button>
         </a>
         <Button onClick={() => {
+          if (muted)
           dispatch(toggleMute());
           dispatch(setThemeLoading(true));
           setTimeout(() => {
-            dispatch(setTheme(theme === "retro" ? "classic" : "retro"));
+            navigate("/");
+            dispatch(setTheme("retro"));
             dispatch(setThemeLoading(false));
           }, 2000);
         }}

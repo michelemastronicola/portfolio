@@ -64,7 +64,6 @@ const AboutMe = () => {
                   audio.volume = 0.3;
                   if (!muted) audio.play().catch(() => { });
                   setTimeout(() => navigate("/home"), 600);
-
                 }}
               />
             </Row>

@@ -6,7 +6,7 @@ interface ThemeState {
 }
 
 const initialState: ThemeState = {
-  currentTheme: "retro",
+  currentTheme: "classic",
   loading: false,
 };
 

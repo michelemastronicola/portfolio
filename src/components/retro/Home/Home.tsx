@@ -104,10 +104,12 @@ const Home = () => {
                       dispatch(setThemeLoading(true));
                       const audio = new Audio("/sounds/loading.wav");
                       audio.volume = 0.3;
-                      if (!muted) audio.play().catch(() => { });
-
+                      if (!muted) {
+                        audio.play().catch(() => { });
+                        dispatch(toggleMute());
+                      }
                       setTimeout(() => {
-                        dispatch(setTheme(theme === "retro" ? "classic" : "retro"));
+                        dispatch(setTheme("classic"));
                         dispatch(setThemeLoading(false));
                       }, 2000);
                     }
