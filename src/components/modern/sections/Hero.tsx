@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const dispatch = useDispatch();
-  const theme = useSelector((state: RootState) => state.theme.currentTheme);
+  const isMobile = useSelector((state: RootState) => state.device.isMobile);
   const loading = useSelector((state: RootState) => state.theme.loading);
   const muted = useSelector((state: RootState) => state.audio.muted);
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ const Hero = () => {
         </a>
         <Button onClick={() => {
           if (muted)
-          dispatch(toggleMute());
+            dispatch(toggleMute());
           dispatch(setThemeLoading(true));
           setTimeout(() => {
             navigate("/");
@@ -46,6 +46,14 @@ const Hero = () => {
           Change Theme
         </Button>
       </div>
+      {!isMobile && <div className="scroll-indicator">
+        <span>scroll</span>
+        <a href="#about" className="arrow-down">
+          <svg width="24" height="24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16l-6-6h12l-6 6z" />
+          </svg>
+        </a>
+      </div>}
     </div>
   );
 };

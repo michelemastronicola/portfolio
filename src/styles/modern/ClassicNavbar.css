@@ -15,9 +15,6 @@
   font-size: 1.2rem;
 }
 
-section {
-}
-
 /* Hamburger icon */
 .hamburger {
   display: none;
@@ -71,12 +68,16 @@ section {
     display: flex;
   }
   .navbar-links {
-    display: none;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+    transform: translateX(100%);
     position: absolute;
     top: 100%;
     right: 0;
     width: 70vw;
-    background: black;
+    background: transparent;
     flex-direction: column;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 0.5rem 0;
@@ -84,7 +85,9 @@ section {
     align-items: flex-end;
   }
   .navbar-links.show {
-    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;  
   }
   .navbar-links a {
     padding: 1rem 2rem;

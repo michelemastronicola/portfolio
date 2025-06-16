@@ -6,7 +6,7 @@ const Projects = () => {
   const projects = [
     {
       title: "PORTFOLIO",
-      description: "A website with two themes: one single page with anchor links and one SPA.",
+      description: "A website with two themes: one single page with anchor links and one SPA. ",
     },
     {
       title: "QUIZCADE",
@@ -40,8 +40,7 @@ const Projects = () => {
             My <span className="highlight">Projects.</span>
           </h2>
           <p>
-            Here’s a selection of things I’ve built or am currently working on.<br />
-            Each project reflects my passion for interactivity and clean code.
+            Here’s a selection of things I’ve built or am currently working on.
           </p>
         </div>
       </div>

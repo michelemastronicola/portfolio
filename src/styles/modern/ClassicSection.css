@@ -16,7 +16,11 @@
   }
 }
 
+/* Hero section */
+
 .hero {
+  position: relative;
+  min-height: 100vh;
   background: url("/public/images/modernbg.gif") center center / cover no-repeat;
 }
 
@@ -60,14 +64,31 @@
 }
 
 .scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
-  animation: bounce 2s infinite;
   color: white;
   font-family: 'Space Mono', monospace;
-  font-size: 1.1rem;
+  animation: bounce 2s infinite;
+  font-size: 1.2rem;
+}
+
+.scroll-indicator .arrow-down {
+  color: white;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -200,6 +221,7 @@
 .contacts {
   background-color: #0f0f0f;
   color: white;
+  /* justify-content: flex-end; */
 }
 
 .contacts-content {
