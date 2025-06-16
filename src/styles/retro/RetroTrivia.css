@@ -13,11 +13,11 @@
     animation: flickerRetro 2s infinite;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .retro-trivia-title {
         font-size: 3rem;
     }
-} */
+}
 
 .question-text {
     font-size: 1rem;
