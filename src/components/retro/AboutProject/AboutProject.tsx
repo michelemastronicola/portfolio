@@ -26,24 +26,24 @@ const AboutProject = () => {
         <div className="animated-text-area">
           <TypingText
             firstlines={[
-              "I'm a front-end developer with a strong focus on UI and interaction.",
-              "I believe good interfaces are not just usable — they're memorable.",
-              "Clean code, thoughtful design, consistent experience.",
-              "That's the baseline I work with.",
+              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
+              "placeholderplaceholderplaceholderplaceholder",
+              "placeholderplaceholderplaceholderplaceholder",
+              "placeholderplaceholderplaceholder",
             ]}
             secondLines={[
-              "I work primarily with React — it's where I feel at home.",
-              "But the front-end world moves fast, and so do I.",
-              "I constantly study new tools, frameworks, and patterns.",
-              "Not to chase trends, but to sharpen the way I build.",
-              "Stagnation isn’t an option in this field — I evolve with it.",
+              "placeholderplaceholderplaceholderplaceholder",
+              "placeholderplaceholderplaceholderplaceholder",
+              "placeholderplaceholderplaceholderplaceholderplaceholder.",
+              "placeholderplaceholderplaceholderplaceholderplaceholder.",
+              "placeholderplaceholderplaceholderplaceholderplaceholder",
             ]}
             thirdLines={[
-              "I care about what I build, not just how I build it.",
-              "I enjoy working on projects that have a clear purpose and identity.",
-              "My goal is to grow as a developer without losing the human part.",
-              "Feedback, transparency, curiosity: I value all of them.",
-              "And if I can learn something new — even better.",
+              "placeholderplaceholderplaceholderplaceholder",
+              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholder",
+              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
+              "placeholderplaceholderplaceholderplaceholderplaceholder",
+              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
             ]}
             delay={19}
             onComplete={() => setShowBackButton(true)}
