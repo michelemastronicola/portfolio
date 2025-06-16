@@ -10,9 +10,16 @@
   justify-content: flex-end;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  padding: 1rem 5rem 1rem 0;
+  padding: 1rem 10rem 1rem 0;
   gap: 2rem;
   font-size: 1.2rem;
+  border-bottom: 4px solid transparent;
+  transition: border-color 0.3s;
+  letter-spacing: 0.05em;
+}
+
+.classic-navbar.scrolled {
+  border-color: #7c3aed;
 }
 
 /* Hamburger icon */
@@ -55,7 +62,7 @@
   transition: color 0.2s;
 }
 .classic-navbar > a:hover {
-  color: #50475f;
+  color: #7c3aed;
 }
 
 /* Mobile styles */

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import "../../styles/modern/ClassicNavbar.css";
@@ -6,12 +6,29 @@ import "../../styles/modern/ClassicNavbar.css";
 const ClassicNavbar = () => {
   const isMobile = useSelector((state: RootState) => state.device.isMobile);
   const [open, setOpen] = useState(false);
+  const [atTop, setAtTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setAtTop(window.pageYOffset === 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleLinkClick = () => setOpen(false);
 
   return (
-    <nav className="classic-navbar" key={isMobile ? "mobile" : "desktop"}>
-      {isMobile ? (
+    <nav
+      className={`classic-navbar${atTop ? "" : " scrolled"}`}
+      key={isMobile ? "mobile" : "desktop"}
+    >      
+    {isMobile ? (
         <>
           <div
             className={`hamburger${open ? " open" : ""}`}
