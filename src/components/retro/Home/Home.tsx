@@ -55,8 +55,7 @@ const Home = () => {
               "I'm a front-end developer",
               "and this is my personal website.",
               "",
-              "Feel free to explore!",
-              "(and to change theme, for a more 'classic' experience)"]}
+              "Feel free to explore!"]}
             delay={60}
             onComplete={() => setShowButtons(true)}
           />
