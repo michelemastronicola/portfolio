@@ -37,6 +37,7 @@
     margin: 1rem;
     font-family: "Press Start 2P", monospace;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     transition: transform 0.1s ease;
 }
 
