@@ -49,15 +49,15 @@ const Hero = () => {
             Change Theme
           </Button>
         </div>
-        <div className="scroll-indicator">
-          <span>scroll</span>
-          <a href="#about" className="arrow-down">
-            <svg width="24" height="24" fill="white" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 16l-6-6h12l-6 6z" />
-            </svg>
-          </a>
-        </div>
       </LazySection>
+      <div className="scroll-indicator">
+        <span>scroll</span>
+        <a href="#about" className="arrow-down">
+          <svg width="24" height="24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16l-6-6h12l-6 6z" />
+          </svg>
+        </a>
+      </div>
     </div>
   );
 };
