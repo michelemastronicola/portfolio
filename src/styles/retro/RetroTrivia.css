@@ -41,6 +41,13 @@
     transition: transform 0.1s ease;
 }
 
+.trivia-buttons button.btn,
+.trivia-buttons button.btn-secondary {
+    background-color: black !important;
+    color: lime !important;
+    border: 2px solid lime !important;
+}
+
 .trivia-buttons button:focus,
 .trivia-buttons button:active,
 .trivia-buttons button:focus-visible {
@@ -50,6 +57,17 @@
     color: lime;
     outline: none;
     box-shadow: none;
+}
+
+.trivia-buttons button.btn:active,
+.trivia-buttons button.btn:focus,
+.trivia-buttons button.btn:focus-visible,
+.trivia-buttons button.btn-secondary:active,
+.trivia-buttons button.btn-secondary:focus,
+.trivia-buttons button.btn-secondary:focus-visible {
+    background-color: black !important;
+    color: lime !important;
+    border: 2px solid lime !important;
 }
 
 @media (hover: hover) {
@@ -95,6 +113,7 @@
 
 
 @keyframes flickerRetro {
+
     0%,
     100% {
         opacity: 1;
@@ -112,7 +131,7 @@
     margin: 1.5rem 0;
     font-size: 1.6rem;
     font-family: "Press Start 2P", monospace;
-    text-align: center  ;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -131,7 +150,7 @@
 
 .fun-facts {
     margin: 10rem auto 0;
-    max-width: 40ch; 
+    max-width: 40ch;
     font-size: 1rem;
     font-family: "Press Start 2P", monospace;
     color: #00ffff;
@@ -150,12 +169,35 @@
 }
 
 @keyframes flickerFact {
-    0%   { opacity: 1; text-shadow: 0 0 2px #00ffff; }
-    5%   { opacity: 0.8; text-shadow: 0 0 1px #00ffff; }
-    10%  { opacity: 0.9; text-shadow: 0 0 3px #00ffff; }
-    15%  { opacity: 0.7; text-shadow: 0 0 2px #00ffff; }
-    20%  { opacity: 1; text-shadow: 0 0 4px #00ffff; }
-    100% { opacity: 1; text-shadow: 0 0 2px #00ffff; }
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 2px #00ffff;
+    }
+
+    5% {
+        opacity: 0.8;
+        text-shadow: 0 0 1px #00ffff;
+    }
+
+    10% {
+        opacity: 0.9;
+        text-shadow: 0 0 3px #00ffff;
+    }
+
+    15% {
+        opacity: 0.7;
+        text-shadow: 0 0 2px #00ffff;
+    }
+
+    20% {
+        opacity: 1;
+        text-shadow: 0 0 4px #00ffff;
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 2px #00ffff;
+    }
 }
 
 .final-message {
@@ -171,4 +213,3 @@
         font-size: 0.9rem;
     }
 }
-
