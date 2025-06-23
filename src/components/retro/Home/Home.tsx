@@ -63,7 +63,7 @@ const Home = () => {
         {showButtons && (
           <div className="button-wrapper">
             <Row className="text-center w-100 m-0 justify-content-center">
-              {["about me", "about this project", "contacts", "other projects"].map((label, index) => (
+              {["about me", "about this project", "contacts", "play"].map((label, index) => (
                 <AnimatedButton
                   key={label}
                   index={index}
@@ -94,7 +94,7 @@ const Home = () => {
                   index={index}
                   label={label}
                   size={isMobile ? 75 : 100}
-                  gifSrc={index === 0 ? "/images/gif4.gif" : index === 1 && muted ? "/images/gif5.gif" : "/images/gif6.gif"}
+                  gifSrc={index === 0 ? "/images/change.gif" : index === 1 && muted ? "/images/gif5.gif" : "/images/gif6.gif"}
                   onClick={() => {
                     const audio = new Audio("/sounds/forward.wav");
                     audio.volume = 0.3;
