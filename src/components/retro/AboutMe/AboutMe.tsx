@@ -27,7 +27,7 @@ const AboutMe = () => {
           <TypingText
             firstlines={[
               "My name is Michele Mastronicola and I am a front-end developer.",
-              "I live in Trani, in southern Ital",
+              "I live in Trani, in southern Italy",
               "I have a degree in Electronic and Telecommunications Engineering",
               "but at the end of my studies I jumped into web development",
             ]}
