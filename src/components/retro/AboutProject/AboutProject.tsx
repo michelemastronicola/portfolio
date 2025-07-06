@@ -16,7 +16,7 @@ const AboutProject = () => {
 
   const muted = useSelector((state: RootState) => state.audio.muted);
   const isMobile = useSelector((state: RootState) => state.device.isMobile);
-  
+
   return (
     <>
       <div className="aboutme-container">
@@ -26,24 +26,20 @@ const AboutProject = () => {
         <div className="animated-text-area">
           <TypingText
             firstlines={[
-              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholder",
+              "This project was born from the idea of putting some of my skills to the test.",
+              "The plan was to create a portfolio split into two themes:",
+              "the first theme is a single page with anchor-based navigation",
+              "The second one is a retro-style SPA with proper routing."
             ]}
             secondLines={[
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholder.",
-              "placeholderplaceholderplaceholderplaceholderplaceholder.",
-              "placeholderplaceholderplaceholderplaceholderplaceholder",
+              "There's also a 'play' section with a mini-game (more coming soon!).",
+              "In the classic theme, you can find the repos of some of my side projects,",
+              "they’re all practice grounds where I test and improve my skills"
             ]}
             thirdLines={[
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
+              "The project is at version 1.0 — it took some time.",
+              "I worked on it here and there, whenever I could,",
+              "it will be constantly updated, so stay tuned"
             ]}
             delay={19}
             onComplete={() => setShowBackButton(true)}

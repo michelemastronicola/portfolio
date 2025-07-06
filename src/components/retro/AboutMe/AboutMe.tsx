@@ -26,24 +26,21 @@ const AboutMe = () => {
         <div className="animated-text-area">
           <TypingText
             firstlines={[
-              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholder",
+              "My name is Michele Mastronicola and I am a front-end developer.",
+              "I live in Trani, in southern Ital",
+              "I have a degree in Electronic and Telecommunications Engineering",
+              "but at the end of my studies I jumped into web development",
             ]}
             secondLines={[
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholder.",
-              "placeholderplaceholderplaceholderplaceholderplaceholder.",
-              "placeholderplaceholderplaceholderplaceholderplaceholder",
+              "I am focused on React and modern JS,",
+              "I build clean, functional UI with attention to detail.",
+              "Always been into tech, breaking and building stuff",
+              "and I’ve turned it into my full-time job."
             ]}
             thirdLines={[
-              "placeholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholder",
-              "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
+              "I use React, Next.js, TypeScript and Git every day",
+              "and I mess around with new libraries and tools all the time.",
+              "I care a lot about accessibility and code scalability.",
             ]}
             delay={19}
             onComplete={() => setShowBackButton(true)}
