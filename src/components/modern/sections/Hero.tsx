@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 import "../../../styles/modern/ClassicSection.css";
 import TipingTextModern from "../../retro/common/TypingTextModern";
 import { Button } from "reactstrap";
@@ -9,6 +8,7 @@ import { RootState } from "../../../store/store";
 import { toggleMute } from "../../../store/audioSlice";
 import { useNavigate } from "react-router-dom";
 import LazySection from "../common/LazySection";
+import CaptchaModal from "../common/CaptchaModal"; // Import the new component
 
 const Hero = () => {
   const dispatch = useDispatch();
@@ -16,6 +16,20 @@ const Hero = () => {
   const loading = useSelector((state: RootState) => state.theme.loading);
   const muted = useSelector((state: RootState) => state.audio.muted);
   const navigate = useNavigate();
+  
+  const [showCaptcha, setShowCaptcha] = useState(false);
+
+  const handleCvDownload = () => {
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement('a');
+    link.href = '/Michele_Mastronicola_CV.pdf';
+    link.download = 'Michele_Mastronicola_CV.pdf';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="classic-section hero">
@@ -27,25 +41,31 @@ const Hero = () => {
         )}
         <h1>michele_mastronicola</h1>
         <p>a_frontend_developer</p>
-        <TipingTextModern staticText="I transform ideas into " dynamicPhrases={["digital experiences.", "interactive interfaces.", "bugs (then fix them).", "dark mode themed websites."]} />
+        <TipingTextModern 
+          staticText="I transform ideas into " 
+          dynamicPhrases={["digital experiences.", "interactive interfaces.", "bugs (then fix them).", "dark mode themed websites."]} 
+        />
         <div className="hero-buttons">
-          <a href="/Michele_Mastronicola_CV.pdf" download target="_blank" rel="noopener noreferrer">
-            <Button color="light" className="btn-outline-purple">
-              Download CV
-            </Button>
-          </a>
-          <Button onClick={() => {
-            if (muted)
-              dispatch(toggleMute());
-            dispatch(setThemeLoading(true));
-            setTimeout(() => {
-              navigate("/");
-              dispatch(setTheme("retro"));
-              dispatch(setThemeLoading(false));
-            }, 2000);
-          }}
+          <Button 
+            color="light" 
+            className="btn-outline-purple"
+            onClick={() => setShowCaptcha(true)}
+          >
+            Download CV
+          </Button>
+          <Button 
+            onClick={() => {
+              if (muted) dispatch(toggleMute());
+              dispatch(setThemeLoading(true));
+              setTimeout(() => {
+                navigate("/");
+                dispatch(setTheme("retro"));
+                dispatch(setThemeLoading(false));
+              }, 2000);
+            }}
             color="primary"
-            className="btn-purple btn-shake-infinite">
+            className="btn-purple btn-shake-infinite"
+          >
             Change Theme
           </Button>
         </div>
@@ -58,6 +78,12 @@ const Hero = () => {
           </svg>
         </a>
       </div>
+      
+      <CaptchaModal
+        isOpen={showCaptcha}
+        toggle={() => setShowCaptcha(false)}
+        onSuccess={handleCvDownload}
+      />
     </div>
   );
 };

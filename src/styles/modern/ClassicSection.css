@@ -216,7 +216,7 @@
 }
 
 .btn-shake-infinite {
-  animation: shake 0.5s infinite;
+  animation: shake 5s infinite;
 }
 
 @keyframes shake {
