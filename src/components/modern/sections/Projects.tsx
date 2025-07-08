@@ -18,8 +18,8 @@ const Projects = () => {
       description: "A React Native app that allows you to search for games and view their details.",
     },
     {
-      title: "???",
-      description: "Coming soon...",
+      title: "LOGIN PAGE",
+      description: "A full-stack authentication system built with Next.js frontend and Express.js backend",
     },
   ];
 
@@ -34,7 +34,7 @@ const Projects = () => {
                   <CardTitle tag="h3">{p.title}</CardTitle>
                   <CardText>{p.description}</CardText>
                 </CardBody>
-                {(p.title === "PORTFOLIO" || p.title === "GAME SEARCH ENGINE") && (
+                {(p.title === "PORTFOLIO" || p.title === "GAME SEARCH ENGINE" || p.title === "LOGIN PAGE") && (
                   <Button
                     className="github-btn"
                     onClick={() => {
@@ -46,6 +46,11 @@ const Projects = () => {
                       } else if (p.title === "GAME SEARCH ENGINE") {
                         window.open(
                           "https://github.com/michelemastronicola/game-explorer-native",
+                          "_blank"
+                        )
+                      } else if (p.title === "LOGIN PAGE") {
+                        window.open(
+                          "https://github.com/michelemastronicola/full-stack-nodejs",
                           "_blank"
                         )
                       }

@@ -72,7 +72,7 @@
 
 .scroll-indicator {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,6 +173,19 @@
     gap: 2rem;
   }
 
+  .scroll-indicator {
+    position: absolute;
+    bottom: 10vh;
+    bottom: calc(10vh + env(safe-area-inset-bottom));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'Space Mono', monospace;
+    animation: bounce 2s infinite;
+    font-size: 1.2rem;
+  }
+
   .about-text {
     border-left: none;
     padding: 0;
@@ -203,7 +216,7 @@
 }
 
 .btn-shake-infinite {
-  animation: shake 0.5s infinite;
+  animation: shake 5s infinite;
 }
 
 @keyframes shake {

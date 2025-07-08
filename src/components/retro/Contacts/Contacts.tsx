@@ -48,13 +48,13 @@ const Contacts = () => {
                   index={index}
                   label={label}
                   size={isMobile ? 80 : 120}
-                  gifSrc={`/images/gif${index + 1}.gif`}
+                  gifSrc={`/images/contacts${index + 1}.gif`}
                   onClick={() => {
                     const audio = new Audio("/sounds/forward.wav");
                     audio.volume = 0.3;
                     if (!muted) audio.play().catch(() => { });
-                    if (index === 0) window.open("https://github.com/michelemastronicola", "_blank");
-                    else if (index === 1) window.open("https://linkedin.com/in/michele-mastronicola-85883324b/", "_blank");
+                    if (index === 0) window.open("https://linkedin.com/in/michele-mastronicola-85883324b/", "_blank");
+                    else if (index === 1) window.open( "https://github.com/michelemastronicola", "_blank");
                     else window.open("mailto:mastronicolamichele@gmail.com");
                   }}
                 />
