@@ -13,6 +13,7 @@ import RetroTrivia from "./components/retro/Modal/RetroTrivia";
 import ClassicHome from "./components/modern/ClassicHome";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
+import RetroParticles from "./components/retro/common/RetroParticles";
 
 const AppRoutes = () => {
 
@@ -28,6 +29,7 @@ const AppRoutes = () => {
   return (
     <div className="global-background">
       <ReactiveOscilloscope />
+      <RetroParticles />
       <Routes>
         <Route path="/" element={<PressEnter />} />
         <Route path="/home" element={<Home />} />
