@@ -14,6 +14,7 @@ import ClassicHome from "./components/modern/ClassicHome";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
 import RetroParticles from "./components/retro/common/RetroParticles";
+import ParticleField from "./components/modern/common/ParticleField";
 
 const AppRoutes = () => {
 
@@ -30,6 +31,7 @@ const AppRoutes = () => {
     <div className="global-background">
       <ReactiveOscilloscope />
       <RetroParticles />
+      <ParticleField/ >
       <Routes>
         <Route path="/" element={<PressEnter />} />
         <Route path="/home" element={<Home />} />
